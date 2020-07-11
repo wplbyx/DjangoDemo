@@ -32,7 +32,7 @@ class BaseCustomManager(Manager):
         """
         extends = extent if isinstance(extent, dict) else {}
         queryset_result = self.get_queryset()  # 初始化查询集
-        for func, value in chain(params.items(), extends.items()):  # 以此迭代两个字典
+        for func, value in chain(params.items(), extends.items()):  # 依次迭代两个字典
             if not value:  # 过滤空查询条件
                 continue
             query_func_name = f'query_{func}'  # 指定query_func名称
